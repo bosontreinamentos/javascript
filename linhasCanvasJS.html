@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Desenhar linhas em JS</title>
+    <meta charset="utf-8">
+    <style>
+        /* Opcional: colocar borda ao redor do canvas */
+        #canvas {
+            border: 1px solid green;
+        }
+    </style>
+
+    <script>
+        function desLin() {
+            var a = 3;
+            var b = 4;
+            // var tela = document.querySelector("#canvas");
+            var tela = document.getElementById("canvas");
+            if (tela.getContext) {
+                var linha = tela.getContext('2d');
+                // Criar novo caminho
+                linha.beginPath();
+                // Ponto de início da linha
+                linha.moveTo(75, 75);
+                // Ponto final da linha
+                linha.lineTo(10, 100);
+                // Opcionais: espessura e cor da linha
+                linha.lineWidth = 10;
+                linha.strokeStyle = "blue";
+                // Tornar a linha visível
+                linha.stroke();
+                //linha.fill();
+                // Finalizar o caminho
+                linha.closePath();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <button type="button" onclick="desLin();">Linha</button>
+
+</body>
+
+</html>
